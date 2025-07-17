@@ -1,29 +1,45 @@
 body {
   margin: 0;
   font-family: 'Orbitron', sans-serif;
-  background: black;
   color: white;
+  position: relative;
   overflow-x: hidden;
 }
 
-nav {
+.background {
+  background: url('assets/giphy.gif') no-repeat center center fixed;
+  background-size: cover;
   position: fixed;
   top: 0;
-  width: 100%;
-  background: black;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 1rem;
-  z-index: 10;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+}
+
+header {
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 0 0 5px #ff00ff, 0 0 10px #00ffff;
+}
+
+nav {
+  margin-top: 1rem;
 }
 
 nav a {
+  margin: 0 1rem;
   text-decoration: none;
-  color: white;
   font-size: 1.2rem;
-  position: relative;
-  transition: all 0.3s ease;
+  color: white;
+  transition: 0.3s ease;
 }
 
 nav a:hover {
@@ -32,90 +48,82 @@ nav a:hover {
   filter: contrast(200%);
 }
 
-#mainCover {
-  width: 300px;
-  animation: fadeInCenter 4s ease forwards, glitch 2s infinite;
-  display: block;
-  margin: 120px auto 10px auto;
+main {
+  padding: 2rem;
+  text-align: center;
 }
 
-.subtitle {
-  text-align: center;
+.album-cover {
+  max-width: 300px;
+  width: 100%;
+  animation: fadeInCenter 4s ease forwards, glitch 2s infinite;
+}
+
+.coming-soon {
   font-size: 1.5rem;
-  color: #888;
+  color: #ccc;
   animation: glitch 2s infinite;
 }
 
-@keyframes fadeInCenter {
-  from {
-    opacity: 0;
-    transform: scale(0.8) translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
+.tracklist li,
+.album ul li {
+  list-style: none;
+  padding: 0.2rem;
+  font-size: 1.1rem;
 }
 
-@keyframes glitch {
-  0% {
-    transform: translate(0);
-  }
-  20% {
-    transform: translate(-1px, 1px);
-  }
-  40% {
-    transform: translate(1px, -1px);
-  }
-  60% {
-    transform: translate(-2px, 2px);
-  }
-  80% {
-    transform: translate(2px, -2px);
-  }
-  100% {
-    transform: translate(0);
-  }
+.tracklist li::before {
+  content: "•";
+  color: #ff00ff;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }
 
 .album {
-  text-align: center;
-  margin: 50px auto;
-  max-width: 600px;
-  animation: fadeIn 2s ease-in-out forwards;
+  margin-bottom: 4rem;
 }
 
 .album img {
   width: 200px;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
-.album h3, .album ul li {
-  margin-bottom: 10px;
+.album h2 a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
-a {
-  color: white;
+.album a {
+  color: #00ffff;
   text-decoration: none;
 }
 
-a:hover {
+.album a:hover {
   color: #ff00ff;
 }
 
-.hidden {
+section {
   display: none;
 }
 
-.activeSection {
+section.active {
   display: block;
-  padding-top: 120px;
-  text-align: center;
-  animation: fadeIn 2s;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@keyframes fadeInCenter {
+  from { opacity: 0; transform: scale(0.8) translateY(-30px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(1px, -1px); }
+  60% { transform: translate(-2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
