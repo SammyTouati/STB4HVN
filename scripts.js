@@ -1,29 +1,21 @@
-const homeLink = document.getElementById('homeLink');
-const tracklistLink = document.getElementById('tracklistLink');
-const musicLink = document.getElementById('musicLink');
+document.addEventListener("DOMContentLoaded", () => {
+  const homeLink = document.getElementById("homeLink");
+  const tracklistLink = document.getElementById("tracklistLink");
+  const musicLink = document.getElementById("musicLink");
 
-const homeSection = document.getElementById('home');
-const tracklistSection = document.getElementById('tracklist');
-const musicSection = document.getElementById('music');
+  const homeSection = document.getElementById("home");
+  const tracklistSection = document.getElementById("tracklist");
+  const musicSection = document.getElementById("music");
 
-function showSection(target) {
-  [homeSection, tracklistSection, musicSection].forEach(sec => sec.classList.add('hidden'));
-  target.classList.remove('hidden');
-}
+  const sections = [homeSection, tracklistSection, musicSection];
 
-homeLink.addEventListener('click', () => showSection(homeSection));
-tracklistLink.addEventListener('click', () => {
-  showSection(tracklistSection);
-  const items = ["·twø·", "·nø signal·", "·impatient·", "·dnd·", "·scene·", "·4am·"];
-  const list = document.getElementById('tracklistItems');
-  list.innerHTML = "";
-  items.forEach((item, i) => {
-    setTimeout(() => {
-      const li = document.createElement('li');
-      li.textContent = item;
-      li.style.animation = "glitch 1s infinite";
-      list.appendChild(li);
-    }, i * 1000);
-  });
+  function showSection(target) {
+    sections.forEach((sec) => sec.classList.remove("active"));
+    target.classList.add("active");
+  }
+
+  homeLink.addEventListener("click", () => showSection(homeSection));
+  tracklistLink.addEventListener("click", () => showSection(tracklistSection));
+  musicLink.addEventListener("click", () => showSection(musicSection));
 });
-musicLink.addEventListener('click', () => showSection(musicSection));
+
