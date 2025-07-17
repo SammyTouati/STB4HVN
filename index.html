@@ -1,60 +1,76 @@
-<! DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>.B4 HVN .< /title>
-<link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>·B4 HVN·</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"/>
 </head>
 <body>
-<div class="background"></div>
-*< header>
-<h1 class="glitch-text" id="homeLink">.B4 HVN .< /h1>
-<nav>
-<a href="#" id="tracklistLink" class="glitch-text"> ._ tracklist _.< /a>
-<a href="#" id="musicLink" class="glitch-text">.music .< /a>
-</nav>
-</header>
-<main>
-<section id="home" class="activeSection">
-<img src="assets/cover.png" alt="B4 HVN Cover" class="album-cover">
-<p class="coming-soon glitch-text">_coming soon _< /p>
-</section>
-<section id="tracklist" class="hidden">
-*< ul class="tracklist">
-<li class="glitch-text">
-:: marker
-".twø."
+  <div class="background"></div>
 
-</1i>
-<li class="glitch-text">
-: :marker
-".nø signal."
-</1i>
-<li class="glitch-text">
-: :marker
-". impatient."
-</li>
-*< li class="glitch-text">
-:: marker
-".dnd."
-</1i>
-*< li class="glitch-text">
-:: marker
-".scene."
-</1i>
-<li class="glitch-text">
-:: marker
-".4am."
-</1i>
-</ul>
-</section>
-<section id="music" class="hidden"> == $0
-<!-- album sections with covers inserted here -- >
-</section>
-</main>
-<script src="scripts.js"></script>
+  <header>
+    <h1 id="homeLink" class="glitch-text title-link">·B4 HVN·</h1>
+    <nav>
+      <a href="#" id="tracklistLink" class="glitch-text nav-link">·_tracklist_·</a>
+      <a href="#" id="musicLink" class="glitch-text nav-link">·music·</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="home" class="activeSection">
+      <img src="assets/cover.png" alt="B4 HVN Cover" class="album-cover"/>
+      <p class="coming-soon glitch-text">_coming soon_</p>
+    </section>
+
+    <!-- TRACKLIST -->
+    <section id="tracklist" class="hidden">
+      <ul class="tracklist">
+        <li class="glitch-text">·twø·</li>
+        <li class="glitch-text">·nø signal·</li>
+        <li class="glitch-text">·impatient·</li>
+        <li class="glitch-text">·dnd·</li>
+        <li class="glitch-text">·scene·</li>
+        <li class="glitch-text">·4am·</li>
+      </ul>
+    </section>
+
+    <!-- MUSIC -->
+    <section id="music" class="hidden">
+      <div class="album">
+        <img src="assets/takeoff-cover.png" alt="TAKE OFF Cover" class="album-cover"/>
+        <a href="https://music.apple.com/us/album/take-off-deluxe/1600135620" target="_blank" class="album-title glitch-text">·TAKE OFF· (Deluxe)</a>
+        <ul class="tracklist">
+          <li><a href="https://music.apple.com/us/song/down/1600135621" target="_blank" class="glitch-text">down</a></li>
+          <li><a href="https://music.apple.com/us/song/plane-feat-zi/1600135622" target="_blank" class="glitch-text">plane (feat. zi)</a></li>
+          <li><a href="https://music.apple.com/us/song/slide/1600135623" target="_blank" class="glitch-text">slide</a></li>
+          <li><a href="https://music.apple.com/us/song/dangerous/1600135624" target="_blank" class="glitch-text">dangerous</a></li>
+          <li><a href="https://music.apple.com/us/song/its-up-interlude/1600135625" target="_blank" class="glitch-text">it's up (interlude)</a></li>
+          <li><a href="https://music.apple.com/us/song/wasted/1600135657" target="_blank" class="glitch-text">wasted</a></li>
+          <li><a href="https://music.apple.com/us/song/rocket/1600135658" target="_blank" class="glitch-text">rocket</a></li>
+          <li><a href="https://music.apple.com/us/song/heartbreaker-bonus/1600135659" target="_blank" class="glitch-text">heartbreaker (bonus)</a></li>
+          <li><a href="https://music.apple.com/us/song/deserve-bonus/1600135660" target="_blank" class="glitch-text">deserve (bonus)</a></li>
+        </ul>
+      </div>
+
+      <div class="album">
+        <img src="assets/undefeated-cover.png" alt="UNDEFEATED Cover" class="album-cover"/>
+        <a href="https://music.apple.com/us/album/undefeated/1617523364" target="_blank" class="album-title glitch-text">·UNDEFEATED·</a>
+        <!-- Include full undefeated tracklist like above -->
+      </div>
+
+      <div class="album">
+        <img src="assets/chargedup-cover.png" alt="CHARGED UP Cover" class="album-cover"/>
+        <a href="https://music.apple.com/us/album/charged-up-ep/1635687999" target="_blank" class="album-title glitch-text">·CHARGED UP· (EP)</a>
+        <!-- Include full charged up tracklist like above -->
+      </div>
+    </section>
+  </main>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
+
 
