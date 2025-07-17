@@ -1,29 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const homeLink = document.getElementById("homeLink");
-  const tracklistLink = document.getElementById("tracklistLink");
-  const musicLink = document.getElementById("musicLink");
-  const homeSection = document.getElementById("home");
-  const tracklistSection = document.getElementById("tracklist");
-  const musicSection = document.getElementById("music");
+  const links = document.querySelectorAll("nav a");
+  const sections = document.querySelectorAll("section");
 
-  function glitchTransition(sectionToShow) {
-    document.body.classList.add("glitch-transition");
-
-    setTimeout(() => {
-      [homeSection, tracklistSection, musicSection].forEach((s) => s.classList.add("hidden"));
-      sectionToShow.classList.remove("hidden");
-
-      document.body.classList.remove("glitch-transition");
-    }, 500);
+  function showSection(id) {
+    sections.forEach(section => {
+      section.classList.remove("active");
+    });
+    document.getElementById(id).classList.add("active");
   }
 
-  homeLink.addEventListener("click", () => glitchTransition(homeSection));
-  tracklistLink.addEventListener("click", () => glitchTransition(tracklistSection));
-  musicLink.addEventListener("click", () => glitchTransition(musicSection));
-
-  // Apply random glitch effects to text
-  const glitchClasses = ["glitch-text"];
-  document.querySelectorAll(".glitch-text").forEach((el) => {
-    el.classList.add(glitchClasses[Math.floor(Math.random() * glitchClasses.length)]);
+  links.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const target = link.getAttribute("href").substring(1);
+      showSection(target);
+    });
   });
+
+  // Delay tracklist reveals
+  document.querySelectorAll(".tracklist").forEach((list) => {
+    const items = list.querySelectorAll("a");
+    items.forEach((item, index) => {
+      item.style.animationDelay = `${index * 0.5}s`;
+    });
+  });
+
+  // Default section
+  showSection("home");
 });
