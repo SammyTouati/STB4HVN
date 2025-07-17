@@ -2,20 +2,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const homeLink = document.getElementById("homeLink");
   const tracklistLink = document.getElementById("tracklistLink");
   const musicLink = document.getElementById("musicLink");
-
   const homeSection = document.getElementById("home");
   const tracklistSection = document.getElementById("tracklist");
   const musicSection = document.getElementById("music");
 
-  const sections = [homeSection, tracklistSection, musicSection];
+  function glitchTransition(sectionToShow) {
+    document.body.classList.add("glitch-transition");
 
-  function showSection(target) {
-    sections.forEach((sec) => sec.classList.remove("active"));
-    target.classList.add("active");
+    setTimeout(() => {
+      [homeSection, tracklistSection, musicSection].forEach((s) => s.classList.add("hidden"));
+      sectionToShow.classList.remove("hidden");
+
+      document.body.classList.remove("glitch-transition");
+    }, 500);
   }
 
-  homeLink.addEventListener("click", () => showSection(homeSection));
-  tracklistLink.addEventListener("click", () => showSection(tracklistSection));
-  musicLink.addEventListener("click", () => showSection(musicSection));
-});
+  homeLink.addEventListener("click", () => glitchTransition(homeSection));
+  tracklistLink.addEventListener("click", () => glitchTransition(tracklistSection));
+  musicLink.addEventListener("click", () => glitchTransition(musicSection));
 
+  // Apply random glitch effects to text
+  const glitchClasses = ["glitch-text"];
+  document.querySelectorAll(".glitch-text").forEach((el) => {
+    el.classList.add(glitchClasses[Math.floor(Math.random() * glitchClasses.length)]);
+  });
+});
