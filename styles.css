@@ -1,1 +1,121 @@
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: black;
+  color: white;
+  overflow-x: hidden;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  z-index: 10;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: #ff00ff;
+  text-shadow: 0 0 5px #ff00ff, 0 0 10px #00ffff;
+  filter: contrast(200%);
+}
+
+#mainCover {
+  width: 300px;
+  animation: fadeInCenter 4s ease forwards, glitch 2s infinite;
+  display: block;
+  margin: 120px auto 10px auto;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #888;
+  animation: glitch 2s infinite;
+}
+
+@keyframes fadeInCenter {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-1px, 1px);
+  }
+  40% {
+    transform: translate(1px, -1px);
+  }
+  60% {
+    transform: translate(-2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.album {
+  text-align: center;
+  margin: 50px auto;
+  max-width: 600px;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+.album img {
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.album h3, .album ul li {
+  margin-bottom: 10px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff00ff;
+}
+
+.hidden {
+  display: none;
+}
+
+.activeSection {
+  display: block;
+  padding-top: 120px;
+  text-align: center;
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
