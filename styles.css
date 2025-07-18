@@ -1,75 +1,117 @@
-body, html {
+body {
   margin: 0;
-  padding: 0;
   font-family: 'Orbitron', sans-serif;
   color: white;
+  background: black;
   overflow-x: hidden;
 }
 
-.background {
+.glitch-bg {
   position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: url('assets/background.gif') center center / cover no-repeat;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: url('assets/giphy.gif') no-repeat center center fixed;
+  background-size: cover;
   z-index: -1;
+  filter: brightness(0.4) contrast(1.2);
 }
 
-header {
+nav {
   text-align: center;
-  margin-top: 2rem;
+  padding: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 15px;
 }
 
 nav a {
-  margin: 0 10px;
   text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  transition: text-shadow 0.2s;
+}
+
+nav a:hover {
+  text-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7;
 }
 
 .section {
   display: none;
   padding: 2rem;
-  text-align: center;
+  animation: glitchFade 0.5s ease-in-out;
 }
 
 .section.active {
   display: block;
 }
 
-.album-cover {
-  max-width: 300px;
-  margin: 1rem auto;
+.album-cover, .album-cover-small {
+  max-width: 250px;
   display: block;
-}
-
-.tracklist {
-  list-style: none;
-  padding: 0;
   margin: 1rem auto;
-  max-width: 600px;
+  border: 2px solid white;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
 }
 
-.tracklist li {
-  margin: 5px 0;
+.album-cover-small {
+  max-width: 150px;
 }
 
-.glitch-link, .glitch-text {
+h1.glitch-title {
+  font-size: 3rem;
+  text-align: center;
+  color: white;
+  animation: glitch 1.5s infinite;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  text-align: center;
+}
+
+li a {
   color: white;
   text-decoration: none;
-  position: relative;
   display: inline-block;
+  padding: 0.3rem 0;
+  transition: text-shadow 0.2s;
 }
 
-.glitch-link:hover {
-  color: #ff00ff;
-  text-shadow: 0 0 3px #0ff, 0 0 6px #f0f;
+li a:hover {
+  text-shadow: 0 0 5px #00fff7, 0 0 10px #00fff7;
 }
 
-.fade-glitch {
-  animation: fadeIn 1.5s ease-in-out both;
+.apple-link {
+  width: 30px;
+  height: 30px;
+  display: block;
+  margin: 10px auto;
+  transition: transform 0.2s;
 }
 
-@keyframes fadeIn {
-  0% { opacity: 0; transform: scale(0.98); }
+.apple-link:hover {
+  transform: scale(1.2);
+}
+
+@keyframes glitchFade {
+  0% { opacity: 0; transform: scale(1.1); }
   100% { opacity: 1; transform: scale(1); }
 }
+
+@keyframes glitch {
+  0% { text-shadow: 2px 2px red; }
+  25% { text-shadow: -2px -2px cyan; }
+  50% { text-shadow: 2px -2px lime; }
+  75% { text-shadow: -2px 2px yellow; }
+  100% { text-shadow: 2px 2px red; }
+}
+
