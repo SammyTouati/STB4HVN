@@ -1,132 +1,102 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
 body {
+  font-family: 'Orbitron', sans-serif;
   margin: 0;
   padding: 0;
-  font-family: 'Orbitron', sans-serif;
-  background: url('assets/giphy.gif') no-repeat center center fixed;
-  background-size: cover;
+  background: black;
   color: white;
   overflow-x: hidden;
 }
 
-header {
-  text-align: center;
-  padding: 2rem;
+#background {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: -1;
+  background-image: url('assets/bg.gif');
+  background-size: cover;
+  background-position: center;
 }
 
-h1 {
-  font-size: 3rem;
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+h1 a {
   color: white;
   text-decoration: none;
-  animation: glitch 1.5s infinite;
 }
 
 nav {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-nav a {
-  margin: 0 1rem;
-  text-decoration: none;
-  color: white;
-  font-size: 1.2rem;
-  position: relative;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #ff00ff;
-  text-shadow: 0 0 10px #ff00ff;
-  animation: glitch-hover 0.5s infinite;
-}
-
-section {
-  display: none;
-  text-align: center;
-  padding: 2rem;
-  animation: fadeIn 1s ease-in-out forwards;
-}
-
-section.active {
-  display: block;
-}
-
-.album-cover {
-  max-width: 250px;
-  margin: 2rem auto;
-  display: block;
-  animation: glitch-fade-in 2s ease-in-out;
-}
-
-.tracklist {
   margin-top: 1rem;
 }
 
-.tracklist a {
-  display: block;
-  margin: 0.3rem 0;
+.nav-link {
+  margin: 0 10px;
+  cursor: pointer;
   color: white;
   text-decoration: none;
-  animation: glitch 2s infinite alternate;
+  transition: color 0.3s;
 }
 
-.tracklist a:hover {
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff;
-  animation: glitch-hover 0.5s infinite;
+.nav-link:hover,
+.glitch-link:hover {
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #f0f;
 }
 
-.apple-logo {
-  width: 30px;
-  margin: 10px;
-  transition: transform 0.3s;
+.section {
+  display: none;
+  padding: 2rem;
+  text-align: center;
 }
 
-.apple-logo:hover {
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 5px #ffffff);
+.section.active {
+  display: block;
+  animation: glitchFade 1s ease;
 }
 
-/* Animations */
+.album-cover,
+.project-cover {
+  width: 250px;
+  margin-bottom: 1rem;
+}
+
+.tracklist {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.5rem;
+}
+
+.track,
+.glitch-link {
+  display: block;
+  color: white;
+  margin: 5px 0;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.coming-soon {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.glitch-text {
+  animation: glitch 1.5s infinite;
+}
+
 @keyframes glitch {
-  0% {
-    text-shadow: 2px 2px #ff00c8, -2px -2px #00fff9;
-  }
-  20% {
-    text-shadow: -2px 0 #ff00c8, 2px 2px #00fff9;
-  }
-  40% {
-    text-shadow: 2px -2px #ff00c8, -2px 0 #00fff9;
-  }
-  60% {
-    text-shadow: 0 2px #ff00c8, 0 -2px #00fff9;
-  }
-  80% {
-    text-shadow: -2px 2px #ff00c8, 2px -2px #00fff9;
-  }
-  100% {
-    text-shadow: 2px 2px #ff00c8, -2px -2px #00fff9;
-  }
+  0% { text-shadow: 2px 2px red; }
+  20% { text-shadow: -2px -2px lime; }
+  40% { text-shadow: 2px -2px blue; }
+  60% { text-shadow: -2px 2px magenta; }
+  80% { text-shadow: 2px 2px cyan; }
+  100% { text-shadow: none; }
 }
 
-@keyframes glitch-hover {
-  0% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(2px, -2px); }
-  60% { transform: translate(-1px, 1px); }
-  80% { transform: translate(1px, -1px); }
-  100% { transform: translate(0); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes glitch-fade-in {
-  0% { opacity: 0; filter: blur(5px); }
-  50% { opacity: 0.5; filter: blur(2px); }
-  100% { opacity: 1; filter: blur(0); }
+@keyframes glitchFade {
+  from { opacity: 0; filter: blur(3px); }
+  to { opacity: 1; filter: blur(0); }
 }
