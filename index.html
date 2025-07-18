@@ -2,102 +2,91 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>·B4 HVN·</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>·B4 HVN· — ST</title>
+  <link href="styles.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="background"></div>
-  <header>
-    <h1 class="glitch-text" onclick="navigateTo('home')">·B4 HVN·</h1>
+  <div id="glitch-background"></div>
+
+  <header class="nav">
+    <a href="#" id="home-link">·B4 HVN·</a>
     <nav>
-      <a href="#tracklist" onclick="navigateTo('tracklist')">·_tracklist_·</a>
-      <a href="#music" onclick="navigateTo('music')">·music·</a>
+      <a href="#tracklist" id="tracklist-link">·_tracklist_·</a>
+      <a href="#music" id="music-link">·music·</a>
     </nav>
   </header>
 
   <main>
-    <!-- HOME -->
-    <section id="home" class="section active">
-      <img src="assets/87d25df9-2069-4755-9a74-63ccd6d9cb1a.png" alt="B4 HVN Cover" class="cover" />
-      <p class="subtitle">_coming soon_</p>
+    <section id="home" class="section visible">
+      <img src="assets/87d25df9-2069-4755-9a74-63ccd6d9cb1a.png" alt="B4 HVN Cover" class="album-cover glitch-img" />
+      <p class="coming-soon">_coming soon_</p>
     </section>
 
-    <!-- TRACKLIST -->
     <section id="tracklist" class="section">
-      <div class="tracklist">
-        <h2 class="glitch-text">·B4 HVN·</h2>
-        <ul class="song-list">
-          <li><span>1.</span> ·twø·</li>
-          <li><span>2.</span> ·nø signal·</li>
-          <li><span>3.</span> ·impatient·</li>
-          <li><span>4.</span> ·dnd·</li>
-          <li><span>5.</span> ·scene·</li>
-          <li><span>6.</span> ·4am·</li>
-        </ul>
-      </div>
+      <ul class="tracklist">
+        <li><a href="#">·twø·</a></li>
+        <li><a href="#">·nø signal·</a></li>
+        <li><a href="#">·impatient·</a></li>
+        <li><a href="#">·dnd·</a></li>
+        <li><a href="#">·scene·</a></li>
+        <li><a href="#">·4am·</a></li>
+      </ul>
     </section>
 
-    <!-- MUSIC -->
     <section id="music" class="section">
       <!-- TAKE OFF -->
-      <div class="album">
-        <img src="assets/11eb3026-19ed-4c7e-aedc-57b2d323d99a.png" class="album-cover" alt="Take Off Cover" />
-        <div class="album-info">
-          <a href="https://music.apple.com/us/album/take-off-deluxe/1600135620" target="_blank" class="album-title">·TAKE OFF· (Deluxe)</a>
-          <img src="assets/apple-logo.png" alt="Apple Music" class="apple-icon" onclick="window.open('https://music.apple.com/us/album/take-off-deluxe/1600135620')">
-          <ul class="song-list">
-            <li><a href="https://music.apple.com/us/song/down/1600135621">down</a></li>
-            <li><a href="https://music.apple.com/us/song/plane-feat-zi/1600135622">plane (feat. zi)</a></li>
-            <li><a href="https://music.apple.com/us/song/slide/1600135623">slide</a></li>
-            <li><a href="https://music.apple.com/us/song/dangerous/1600135624">dangerous</a></li>
-            <li><a href="https://music.apple.com/us/song/its-up-interlude/1600135625">it's up (interlude)</a></li>
-            <li><a href="https://music.apple.com/us/song/wasted/1600135657">wasted</a></li>
-            <li><a href="https://music.apple.com/us/song/rocket/1600135658">rocket</a></li>
-            <li><a href="https://music.apple.com/us/song/heartbreaker-bonus/1600135659">heartbreaker (bonus)</a></li>
-            <li><a href="https://music.apple.com/us/song/deserve-bonus/1600135660">deserve (bonus)</a></li>
-          </ul>
-        </div>
+      <div class="project">
+        <img src="assets/11eb3026-19ed-4c7e-aedc-57b2d323d99a.png" alt="Take Off Cover" class="album-cover-small" />
+        <a href="https://music.apple.com/us/album/take-off-deluxe/1600135620" target="_blank" class="project-title">·TAKE OFF· (Deluxe)</a>
+        <img src="assets/apple-logo.png" class="apple-icon" />
+        <ul>
+          <li><a href="https://music.apple.com/us/song/down/1600135621">down</a></li>
+          <li><a href="https://music.apple.com/us/song/plane-feat-zi/1600135622">plane (feat. zi)</a></li>
+          <li><a href="https://music.apple.com/us/song/slide/1600135623">slide</a></li>
+          <li><a href="https://music.apple.com/us/song/dangerous/1600135624">dangerous</a></li>
+          <li><a href="https://music.apple.com/us/song/its-up-interlude/1600135625">it's up (interlude)</a></li>
+          <li><a href="https://music.apple.com/us/song/wasted/1600135657">wasted</a></li>
+          <li><a href="https://music.apple.com/us/song/rocket/1600135658">rocket</a></li>
+          <li><a href="https://music.apple.com/us/song/heartbreaker-bonus/1600135659">heartbreaker (bonus)</a></li>
+          <li><a href="https://music.apple.com/us/song/deserve-bonus/1600135660">deserve (bonus)</a></li>
+        </ul>
       </div>
 
       <!-- UNDEFEATED -->
-      <div class="album">
-        <img src="assets/undefeated-cover.png" class="album-cover" alt="Undefeated Cover" />
-        <div class="album-info">
-          <a href="https://music.apple.com/us/album/undefeated/1617523364" target="_blank" class="album-title">·UNDEFEATED·</a>
-          <img src="assets/apple-logo.png" alt="Apple Music" class="apple-icon" onclick="window.open('https://music.apple.com/us/album/undefeated/1617523364')">
-          <ul class="song-list">
-            <li><a href="https://music.apple.com/us/song/nvm-intro/1617523365">nvm (intro)</a></li>
-            <li><a href="https://music.apple.com/us/song/lifestyle/1617523366">lifestyle</a></li>
-            <li><a href="https://music.apple.com/us/song/vision-feat-zi/1617523367">vision (feat. zi)</a></li>
-            <li><a href="https://music.apple.com/us/song/confessions/1617523368">confessions</a></li>
-            <li><a href="https://music.apple.com/us/song/no-time/1617523369">no time</a></li>
-            <li><a href="https://music.apple.com/us/song/luv-it/1617523370">luv it</a></li>
-            <li><a href="https://music.apple.com/us/song/alone-interlude/1617523371">alone (interlude)</a></li>
-            <li><a href="https://music.apple.com/us/song/mandatory-feat-zi/1617523372">mandatory (feat. zi)</a></li>
-            <li><a href="https://music.apple.com/us/song/motto-my-soul/1617523373">motto / my soul</a></li>
-            <li><a href="https://music.apple.com/us/song/12am-options2-0/1617523374">12AM (options2.0)</a></li>
-            <li><a href="https://music.apple.com/us/song/ready/1617523375">ready</a></li>
-            <li><a href="https://music.apple.com/us/song/undefeated-outro/1617523376">undefeated (outro)</a></li>
-          </ul>
-        </div>
+      <div class="project">
+        <img src="assets/undefeated-cover.png" alt="Undefeated Cover" class="album-cover-small" />
+        <a href="https://music.apple.com/us/album/undefeated/1617523364" target="_blank" class="project-title">·UNDEFEATED·</a>
+        <img src="assets/apple-logo.png" class="apple-icon" />
+        <ul>
+          <li><a href="https://music.apple.com/us/song/nvm-intro/1617523365">nvm (intro)</a></li>
+          <li><a href="https://music.apple.com/us/song/lifestyle/1617523366">lifestyle</a></li>
+          <li><a href="https://music.apple.com/us/song/vision-feat-zi/1617523367">vision (feat. zi)</a></li>
+          <li><a href="https://music.apple.com/us/song/confessions/1617523368">confessions</a></li>
+          <li><a href="https://music.apple.com/us/song/no-time/1617523369">no time</a></li>
+          <li><a href="https://music.apple.com/us/song/luv-it/1617523370">luv it</a></li>
+          <li><a href="https://music.apple.com/us/song/alone-interlude/1617523371">alone (interlude)</a></li>
+          <li><a href="https://music.apple.com/us/song/mandatory-feat-zi/1617523372">mandatory (feat. zi)</a></li>
+          <li><a href="https://music.apple.com/us/song/motto-my-soul/1617523373">motto / my soul</a></li>
+          <li><a href="https://music.apple.com/us/song/12am-options2-0/1617523374">12AM (options2.0)</a></li>
+          <li><a href="https://music.apple.com/us/song/ready/1617523375">ready</a></li>
+          <li><a href="https://music.apple.com/us/song/undefeated-outro/1617523376">undefeated (outro)</a></li>
+        </ul>
       </div>
 
       <!-- CHARGED UP -->
-      <div class="album">
-        <img src="assets/charged-up-cover.png" class="album-cover" alt="Charged Up Cover" />
-        <div class="album-info">
-          <a href="https://music.apple.com/us/album/charged-up-ep/1635687999" target="_blank" class="album-title">·CHARGED UP· (EP)</a>
-          <img src="assets/apple-logo.png" alt="Apple Music" class="apple-icon" onclick="window.open('https://music.apple.com/us/album/charged-up-ep/1635687999')">
-          <ul class="song-list">
-            <li><a href="https://music.apple.com/us/song/guap/1635688000">guap</a></li>
-            <li><a href="https://music.apple.com/us/song/up-4l/1635688001">up (4L)</a></li>
-            <li><a href="https://music.apple.com/us/song/twocups-interlude/1635688002">twocups (interlude)</a></li>
-            <li><a href="https://music.apple.com/us/song/where-did-u-go/1635688003">where did u go</a></li>
-            <li><a href="https://music.apple.com/us/song/bourbon/1635688004">bourbon</a></li>
-          </ul>
-        </div>
+      <div class="project">
+        <img src="assets/charged-up-cover.png" alt="Charged Up Cover" class="album-cover-small" />
+        <a href="https://music.apple.com/us/album/charged-up-ep/1635687999" target="_blank" class="project-title">·CHARGED UP· (EP)</a>
+        <img src="assets/apple-logo.png" class="apple-icon" />
+        <ul>
+          <li><a href="https://music.apple.com/us/song/guap/1635688000">guap</a></li>
+          <li><a href="https://music.apple.com/us/song/up-4l/1635688001">up (4L)</a></li>
+          <li><a href="https://music.apple.com/us/song/twocups-interlude/1635688002">twocups (interlude)</a></li>
+          <li><a href="https://music.apple.com/us/song/where-did-u-go/1635688003">where did u go</a></li>
+          <li><a href="https://music.apple.com/us/song/bourbon/1635688004">bourbon</a></li>
+        </ul>
       </div>
     </section>
   </main>
@@ -105,3 +94,4 @@
   <script src="scripts.js"></script>
 </body>
 </html>
+
