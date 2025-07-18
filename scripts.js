@@ -1,8 +1,5 @@
-function showSection(id) {
+function navigateTo(sectionId) {
   document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-}
-
-function goHome() {
-  showSection('home');
+  const section = document.getElementById(sectionId);
+  section.classList.add('active');
 }
